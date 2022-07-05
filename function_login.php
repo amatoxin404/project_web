@@ -14,7 +14,7 @@ if(isset($_POST['login_btn'])) {
     } else {
         try {
             $user = $auth->getUserByEmail("$email");
-            if($email != "admin@admin.com") {
+            if($user->displayName != null) {
                 $_SESSION['status'] = "Silahkan Periksa Kembali Email Anda!";
                 header('Location:index.php');
                 exit();
